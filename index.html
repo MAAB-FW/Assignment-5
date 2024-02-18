@@ -140,28 +140,9 @@
             </div>
         </section>
 
-        <!-- success popup -->
-        <section id="success-popup" class="hidden max-w-[1440px] mx-auto font-roboto ">
-            <div class="w-[62%] mx-auto bg-slate-400 flex flex-col items-center pb-14">
-                <div class="flex flex-col text-center items-center gap-[38px]">
-                    <div class="mt-14">
-                        <img src="images/success.png" alt="">
-                    </div>
-                    <h2 class="text-[#27AE60] text-2xl font-bold">SUCCESS</h2>
-                    <p class="w-[561px] text-xl font-medium">Thank you for Booking Our Bus Seats. <br>
-                        We are working hard to find the best service and deals for you. <br><br>
-                        <span class="font-light">Shortly you will find a confirmation in your email.</span>
-                    </p>
-                </div>
-                <div class="mt-[19px]">
-                    <button
-                        class="hover:bg-emerald-700 text-xl font-semibold bg-[#27AE60] text-white py-4 rounded-full px-[104px]">Continue</button>
-                </div>
-            </div>
-        </section>
         <!-- Eternity Paribahan -->
         <section id="E-paribahan"
-            class="max-w-[1440px] pb-[120px] mx-auto rounded-t-[88px] bg-[#F7F8F8] border-t-2 border-[rgb(29,209,0)]">
+            class="relative max-w-[1440px] pb-[120px] mx-auto rounded-t-[88px] bg-[#F7F8F8] border-t-2 border-[rgb(29,209,0)]">
             <div class="w-[81.25%] mx-auto">
                 <!-- heading part -->
                 <div class="pt-14 lg:pt-[120px] text-center">
@@ -564,6 +545,27 @@
                                 <p>BDT <span id="grand-total">0</span></p>
                             </div>
                         </div>
+                        <!-- success popup -->
+                        <!-- <section class=" max-w-[1440px] mx-auto"> -->
+                        <div id="success-popup"
+                            class="absolute hidden left-[270px] rounded-2xl w-[62%] font-roboto mx-auto bg-white flex flex-col items-center pb-14">
+                            <div class="flex flex-col text-center items-center gap-[38px]">
+                                <div class="mt-14">
+                                    <img src="images/success.png" alt="">
+                                </div>
+                                <h2 class="text-[#27AE60] text-2xl font-bold">SUCCESS</h2>
+                                <p class="w-[561px] text-xl font-medium">Thank you for Booking Our Bus Seats. <br>
+                                    We are working hard to find the best service and deals for you. <br><br>
+                                    <span class="font-light">Shortly you will find a confirmation in your
+                                        email.</span>
+                                </p>
+                            </div>
+                            <div class="mt-[19px]">
+                                <button
+                                    class="hover:bg-emerald-700 text-xl font-semibold bg-[#27AE60] text-white py-4 rounded-full px-[104px]">Continue</button>
+                            </div>
+                        </div>
+                        <!-- </section> -->
                         <!-- user input section -->
                         <div class="">
                             <div class="mt-4"><label class="font-semibold">Passenger Name*</label><br>
@@ -572,7 +574,8 @@
                             </div>
 
                             <div class="mt-4"><label class="font-semibold">Phone Number*</label><br>
-                                <input class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="number"
+                                <input id="required" onchange="typeCheck()"
+                                    class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="number"
                                     placeholder="Enter your phone number" required>
                             </div>
 
@@ -582,8 +585,8 @@
                             </div>
 
                             <div class="mb-6 mt-2">
-                                <button id="next"
-                                    class="w-full btn bg-[#1DD100] font-extrabold text-xl text-white">Next</button>
+                                <button id="next" class="w-full btn bg-[#1DD100] font-extrabold text-xl text-white"><a
+                                        href="#success-popup">Next</a></button>
                             </div>
 
                             <div class="flex justify-evenly text-[rgba(3,7,18,0.6)]">
