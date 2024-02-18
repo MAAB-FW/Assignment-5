@@ -23,7 +23,7 @@ for (const seat of seatButton) {
             const div = document.createElement('div')
             div.classList.add("my-2", "flex", "justify-between", "text-[rgba(3,7,18,0.6)]")
 
-
+            const ticketPricePerSeat = getInnerTextValueFromId('ticket-price-per-seat')
             const p1 = document.createElement('p')
             const seatText = seat.innerText
             p1.innerText = seatText;
@@ -32,15 +32,16 @@ for (const seat of seatButton) {
             p2.innerText = 'Economy';
 
             const p3 = document.createElement('p')
-            p3.innerText = 550;
+            p3.innerText = ticketPricePerSeat;
             div.append(p1, p2, p3)
             appendedSection.appendChild(div)
 
             // const totalPriceTextValue = getInnerTextValueFromId('total-price')
             // updateTotalPrice = updateTotalPrice + 550
-            const ticketPricePerSeat = getInnerTextValueFromId('ticket-price-per-seat')
             updateTotalPrice = seatCount * ticketPricePerSeat
             setInnerTextWithIdAndValue('total-price', updateTotalPrice)
+            const grandFinal = updateTotalPrice
+            setInnerTextWithIdAndValue('grand-total', grandFinal)
 
             if (seatCount === 4) {
                 apply.removeAttribute('disabled')
@@ -61,13 +62,13 @@ apply.addEventListener('click', function () {
     const couponInputValue = getInputValueFromId('input-coupon')
     if (couponInputValue === new15Coupon) {
         const grandTotal15 = updateTotalPrice * 0.15
-        grandFinal = updateTotalPrice - grandTotal15
+        const grandFinal = updateTotalPrice - grandTotal15
         setInnerTextWithIdAndValue('grand-total', grandFinal)
         hide.classList.add('hidden')
     }
     else if (couponInputValue === couple20Coupon) {
         const grandTotal20 = updateTotalPrice * 0.2
-        grandFinal = updateTotalPrice - grandTotal20
+        const grandFinal = updateTotalPrice - grandTotal20
         setInnerTextWithIdAndValue('grand-total', grandFinal)
         hide.classList.add('hidden')
     }
