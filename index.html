@@ -157,7 +157,7 @@
                             <!-- upper right -->
                             <div class="btn bg-[rgba(29,209,0,0.1)] text-[rgb(29,209,0)] lg:text-lg">
                                 <img src="images/seat-green.png" alt="">
-                                <span>40</span> Seats left
+                                <span id="remaining-seat">40</span> Seats left
                             </div>
                         </div>
                         <!-- lower part -->
@@ -225,7 +225,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>A</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="A1" class="w-5">A1</div>
                                         </button>
@@ -247,7 +247,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>B</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="B1" class="w-5">B1</div>
                                         </button>
@@ -269,7 +269,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>C</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="C1" class="w-5">C1</div>
                                         </button>
@@ -291,7 +291,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>D</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="D1" class="w-5">D1</div>
                                         </button>
@@ -313,7 +313,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>E</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="E1" class="w-5">E1</div>
                                         </button>
@@ -335,7 +335,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>F</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="F1" class="w-5">F1</div>
                                         </button>
@@ -357,7 +357,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>G</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="G1" class="w-5">G1</div>
                                         </button>
@@ -379,7 +379,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>H</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="H1" class="w-5">H1</div>
                                         </button>
@@ -401,7 +401,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>I</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="I1" class="w-5">I1</div>
                                         </button>
@@ -423,7 +423,7 @@
                             <div class="flex gap-[66px] justify-between">
                                 <div class="flex items-center gap-10">
                                     <p>J</p>
-                                    <div class="flex  gap-16">
+                                    <div class="flex gap-16">
                                         <button class="btn btn-lg text-[rgba(3,7,18,0.5)]">
                                             <div id="J1" class="w-5">J1</div>
                                         </button>
@@ -450,10 +450,73 @@
                                 class="text-2xl font-raleway font-semibold text-[#030712] pb-6 border-b border-dashed mb-6">
                                 Select Your Seat</h2>
                         </div>
-                        <div>
-
+                        <!-- seat calculation -->
+                        <div class="p-8 bg-[#F7F8F8] rounded-lg w-full mb-6">
+                            <!-- heading  -->
+                            <div class="pb-4 border-dashed font-medium border-b flex justify-between text-[#030712]">
+                                <p>Seat <sup id="selected-seat"
+                                        class="px-2 rounded-[5px] bg-[#1DD100] text-white text-xs font-bold">0</sup>
+                                </p>
+                                <p>Class</p>
+                                <p>Price</p>
+                            </div>
+                            <!-- appended section  -->
+                            <div class="border-b">
+                                <div class="my-2 flex justify-between text-[rgba(3,7,18,0.6)]">
+                                    <p>C2</p>
+                                    <p>Economy</p>
+                                    <p>550</p>
+                                </div>
+                                <div class="my-2 flex justify-between text-[rgba(3,7,18,0.6)]">
+                                    <p>C2</p>
+                                    <p>Economy</p>
+                                    <p>550</p>
+                                </div>
+                            </div>
+                            <!-- total price  -->
+                            <div class="my-[17px] font-medium flex justify-between text-[#030712]">
+                                <p>Total Price</p>
+                                <p>BDT <span>0</span></p>
+                            </div>
+                            <!-- coupon input -->
+                            <div class="relative mb-6">
+                                <input class="py-5 pl-[22px] rounded-xl w-full placeholder:text-sm" type="text"
+                                    placeholder="Have any coupon?">
+                                <button id="apply" disabled
+                                    class="absolute right-2 top-2 btn font-semibold text-white bg-[#1DD100]">Apply</button>
+                            </div>
+                            <!-- grand total  -->
+                            <div class="font-medium flex justify-between text-[#030712]">
+                                <p>Grand Total</p>
+                                <p>BDT <span>0</span></p>
+                            </div>
                         </div>
+                        <!-- user input section -->
+                        <div class="">
+                            <div class="mt-4"><label class="font-semibold">Passenger Name*</label><br>
+                                <input class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="text"
+                                    placeholder="Enter your name">
+                            </div>
 
+                            <div class="mt-4"><label class="font-semibold">Phone Number*</label><br>
+                                <input class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="number"
+                                    placeholder="Enter your phone number">
+                            </div>
+
+                            <div class="mt-4"><label class="font-semibold">Email ID</label><br>
+                                <input class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="email"
+                                    placeholder="Enter your email id">
+                            </div>
+
+                            <div class="mb-6 mt-2">
+                                <button class="w-full btn bg-[#1DD100] font-extrabold text-xl text-white">Next</button>
+                            </div>
+
+                            <div class="flex justify-evenly text-[rgba(3,7,18,0.6)]">
+                                <a class="link" href="">Terms and Conditions</a>
+                                <a class="link" href="">Cancellation Policy</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
