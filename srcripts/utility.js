@@ -17,6 +17,10 @@ function setInnerTextWithIdAndValue(elementId, value) {
     const element = document.getElementById(elementId)
     element.innerText = value
 }
+function setValueWithIdAndValue(elementId, valueNew) {
+    const element = document.getElementById(elementId)
+    element.value = valueNew
+}
 
 /* get value from input id */
 function getInputValueFromId(elementId) {
