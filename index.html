@@ -581,13 +581,13 @@
                                 </p>
                             </div>
                             <div class="mt-[19px]">
-                                <button
+                                <button onclick="continueHide()"
                                     class="hover:bg-emerald-700 text-xl font-semibold bg-[#27AE60] text-white py-4 rounded-full px-[104px]">Continue</button>
                             </div>
                         </div>
                         <!-- </section> -->
                         <!-- user input section -->
-                        <div class="">
+                        <form class="">
                             <div class="mt-4"><label class="font-semibold">Passenger Name*</label><br>
                                 <input class="my-4 py-5 pl-[22px] border rounded-xl w-full" type="text"
                                     placeholder="Enter your name">
@@ -605,15 +605,19 @@
                             </div>
 
                             <div class="mb-6 mt-2">
-                                <button id="next" class="w-full btn bg-[#1DD100] font-extrabold text-xl text-white"><a
-                                        href="#success-popup">Next</a></button>
+                                <button id="next" onclick="nextChanged()"
+                                    class="w-full btn bg-[#1DD100] font-extrabold text-xl text-white">
+                                    <a href="#success-popup">
+                                        Next
+                                    </a>
+                                </button>
                             </div>
 
                             <div class="flex justify-evenly text-[rgba(3,7,18,0.6)]">
                                 <a class="link" href="">Terms and Conditions</a>
                                 <a class="link" href="">Cancellation Policy</a>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

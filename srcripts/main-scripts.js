@@ -2,11 +2,13 @@ const allSeats = document.getElementById('allSeats')
 const seatButton = document.getElementsByClassName('seatButton')
 const appendedSection = document.getElementById('appended-section')
 const apply = document.getElementById('apply')
+const visiblePopup = document.getElementById('success-popup')
 
 let updateTotalPrice = 0
 let seatCount = 0
-var isSelected = false
-var isTyped = false
+let isSelected = false
+let isTyped = false
+
 for (const seat of seatButton) {
     seat.addEventListener('click', function () {
         if (seatCount < 4) {
@@ -46,7 +48,6 @@ for (const seat of seatButton) {
             setInnerTextWithIdAndValue('grand-total', grandFinal)
 
             isSelected = true
-            check()
 
             if (seatCount === 4) {
                 apply.removeAttribute('disabled')
@@ -65,6 +66,7 @@ apply.addEventListener('click', function () {
     const new15Coupon = getInnerTextFromId('new15')
     const couple20Coupon = getInnerTextFromId('couple20')
     const couponInputValue = getInputValueFromId('input-coupon')
+
     if (couponInputValue === new15Coupon) {
         const grandTotal15 = updateTotalPrice * 0.15
         const grandFinal = updateTotalPrice - grandTotal15
@@ -84,12 +86,27 @@ apply.addEventListener('click', function () {
 
 function typeCheck() {
     isTyped = true
-    check()
 }
 
-const visiblePopup = document.getElementById('success-popup')
-function check() {
+function nextChanged() {
     if (isSelected === true && isTyped === true) {
         visiblePopup.classList.remove('hidden')
+    } else {
+        alert('Please select atleast 1 seat and must type phone number.')
     }
 }
+
+function continueHide() {
+    visiblePopup.classList.add('hidden')
+}
+/* ---------------------------------- */
+
+// const body = document.getElementsByTagName('body')
+//     body[0].classList.add('opacity-25')
+
+/* const seatCountAnother = document.getElementById('selected-seat-count')
+const sCA = parseInt(seatCountAnother.innerText)
+console.log(sCA); */
+
+/* const p = getInnerTextValueFromId('selected-seat-count')
+console.log(p); */
