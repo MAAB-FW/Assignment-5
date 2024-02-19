@@ -15,6 +15,7 @@ for (const seat of seatButton) {
             seat.classList.add('btnBgColorChanged')
             seat.classList.add('text-white')
             seat.classList.remove('bg-[#F7F8F8]')
+            seat.classList.remove('hover:bg-[rgb(148,163,184)]')
             seat.setAttribute('disabled', '')
 
             seatCount = seatCount + 1
