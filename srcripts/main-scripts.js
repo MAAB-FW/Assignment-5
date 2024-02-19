@@ -7,7 +7,7 @@ const visiblePopup = document.getElementById('success-popup')
 let updateTotalPrice = 0
 let seatCount = 0
 let isSelected = false
-let isTyped = false
+// let isTyped = false
 
 for (const seat of seatButton) {
     seat.addEventListener('click', function () {
@@ -40,8 +40,6 @@ for (const seat of seatButton) {
             div.append(p1, p2, p3)
             appendedSection.appendChild(div)
 
-            // const totalPriceTextValue = getInnerTextValueFromId('total-price')
-            // updateTotalPrice = updateTotalPrice + 550
             updateTotalPrice = seatCount * ticketPricePerSeat
             setInnerTextWithIdAndValue('total-price', updateTotalPrice)
             const grandFinal = updateTotalPrice
@@ -62,7 +60,9 @@ for (const seat of seatButton) {
     })
 }
 
-const hide = document.getElementById('hide-hobe')
+/* ------------------------------------------------------------------------------- */
+
+const hide = document.getElementById('hide-coupon')
 
 apply.addEventListener('click', function () {
     const new15Coupon = getInnerTextFromId('new15')
@@ -90,13 +90,12 @@ apply.addEventListener('click', function () {
     }
 })
 
-function typeCheck() {
-    isTyped = true
-}
+/* ------------------------------------------------------------------------------- */
 
 function nextChanged() {
+    const requiredInput = getInputValueFromId('required')
     // console.log(appendedSection.innerHTML='');
-    if (isSelected === true && isTyped === true) {
+    if (isSelected === true && requiredInput > 0 && requiredInput.length > 10) {
         visiblePopup.classList.remove('hidden')
         seatCount = 0
         setInnerTextWithIdAndValue('selected-seat-count', seatCount)
@@ -109,17 +108,26 @@ function nextChanged() {
         apply.setAttribute('disabled', true)
         setValueWithIdAndValue('required', '')
         isSelected = false
-        isTyped = false
+        // isTyped = false
     } else {
-        alert('Please select atleast 1 seat and must type phone number.')
+        alert('Please select atleast 1 seat and must type 11 digit phone number.')
     }
 }
 
 function continueHide() {
     visiblePopup.classList.add('hidden')
 }
-/* ---------------------------------- */
 
+/* ------------------------------------------------------------------------------- */
+
+// function typeCheck() {
+//     isTyped = true
+// }
+
+// const totalPriceTextValue = getInnerTextValueFromId('total-price')
+// updateTotalPrice = updateTotalPrice + 550
+
+/* ------------------------------------------------------------------------------- */
 // const body = document.getElementsByTagName('body')
 //     body[0].classList.add('opacity-25')
 
